@@ -45,4 +45,9 @@ class AuthController extends Controller
             'token' => $token,
         ]);
     }
+
+    public function getProfile()
+    {
+        return response()->json(auth()->guard()->user());
+    }
 }
